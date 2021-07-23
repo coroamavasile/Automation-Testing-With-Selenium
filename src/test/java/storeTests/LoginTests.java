@@ -8,10 +8,10 @@ public class LoginTests extends BasedTests{
     public void shoudSuccessfullyLogin()
     {
         homePage.clickSingInButton();
-        authentificationPage.enterEmailAddress("coroama.vasile1@gmail.com");
+        authentificationPage.enterEmailAddress("testvasi1999@gmail.com");
         authentificationPage.enterPassword("123456789");
         authentificationPage.clickSingInButton();
-        myAccountPage.checkWelcomeMessage();
+        myAccountPage.checkWelcomeMessage("Welcome to your account. Here you can manage all of your personal information and orders.");
         myAccountPage.loggingOut();
     }
 }

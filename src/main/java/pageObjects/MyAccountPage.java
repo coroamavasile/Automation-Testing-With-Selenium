@@ -11,8 +11,15 @@ public class MyAccountPage {
 
     @FindBy(xpath="//*[@class='info-account']")
     private WebElement welcomeMessage;
+
     @FindBy(xpath = "//*[@class='logout']")
     private WebElement logOut;
+
+    @FindBy(id = "contact-link")
+    private WebElement contactUsButtom;
+
+    @FindBy(xpath = "//*[@class='icon-user']")
+    private WebElement myPersonalInformationButtom;
 
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -26,5 +33,14 @@ public class MyAccountPage {
     public void loggingOut()
     {
         logOut.click();
+    }
+
+    public void checkContactUsButtom(){
+        contactUsButtom.click();
+    }
+
+    public void checkMyPersonalInformationButtom()
+    {
+        myPersonalInformationButtom.click();
     }
 }

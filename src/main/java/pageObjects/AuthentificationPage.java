@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,9 +21,11 @@ public class AuthentificationPage {
     @FindBy(xpath="//*[@class='icon-lock left']")
     private WebElement singInButton;
 
+    @FindBy(xpath="//*[@class='alert alert-danger']")
+    private WebElement alertMessage;
+
     public void enterEmailAddress(String emailAddress1)
     {
-
         emailAddress.sendKeys(emailAddress1);
     }
 
@@ -34,6 +37,11 @@ public class AuthentificationPage {
     public void clickSingInButton()
     {
         singInButton.click();
+    }
+
+    public void checkAlertMessage(String expectedMessage){
+        System.out.println(alertMessage.getText());
+        Assert.assertTrue(expectedMessage.equals(alertMessage.getText()));
     }
 
 

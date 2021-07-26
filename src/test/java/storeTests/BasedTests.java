@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.AuthentificationPage;
 import pageObjects.HomePage;
 import pageObjects.MyAccountPage;
+import pageObjects.MyPersonalInformationPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +17,7 @@ public class BasedTests {
     public HomePage homePage;
     public AuthentificationPage authentificationPage;
     public MyAccountPage myAccountPage;
+    public MyPersonalInformationPage myPersonalInformationPage;
     @Before
     public void setup()
     {
@@ -26,11 +28,12 @@ public class BasedTests {
         homePage = PageFactory.initElements(driver,HomePage.class);
         authentificationPage=PageFactory.initElements(driver,AuthentificationPage.class);
         myAccountPage=PageFactory.initElements(driver,MyAccountPage.class);
+        myPersonalInformationPage = PageFactory.initElements(driver,MyPersonalInformationPage.class);
     }
 
     @After
     public void after()
     {
-        driver.quit();
+//        driver.quit();
     }
 }

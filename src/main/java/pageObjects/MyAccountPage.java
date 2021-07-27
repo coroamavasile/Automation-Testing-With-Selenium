@@ -21,6 +21,12 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@class='icon-user']")
     private WebElement myPersonalInformationButtom;
 
+    @FindBy(xpath ="(//a[@title='Dresses'])[2]")
+    private WebElement dressesButton;
+
+    @FindBy(xpath = "//a[@title='Addresses']")
+    private WebElement myAddressesButton;
+
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -42,5 +48,14 @@ public class MyAccountPage {
     public void checkMyPersonalInformationButtom()
     {
         myPersonalInformationButtom.click();
+    }
+
+    public void checkDressesButton()
+    {
+        dressesButton.click();
+    }
+
+    public void clickMyAdrressesButton(){
+        myAddressesButton.click();
     }
 }

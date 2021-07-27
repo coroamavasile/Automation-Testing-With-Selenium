@@ -5,10 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import pageObjects.AuthentificationPage;
-import pageObjects.HomePage;
-import pageObjects.MyAccountPage;
-import pageObjects.MyPersonalInformationPage;
+import pageObjects.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +15,9 @@ public class BasedTests {
     public AuthentificationPage authentificationPage;
     public MyAccountPage myAccountPage;
     public MyPersonalInformationPage myPersonalInformationPage;
+    public DressesPage dressesPage;
+    public MyAddressesPage myAddressesPage;
+
     @Before
     public void setup()
     {
@@ -29,11 +29,14 @@ public class BasedTests {
         authentificationPage=PageFactory.initElements(driver,AuthentificationPage.class);
         myAccountPage=PageFactory.initElements(driver,MyAccountPage.class);
         myPersonalInformationPage = PageFactory.initElements(driver,MyPersonalInformationPage.class);
+        dressesPage = PageFactory.initElements(driver, DressesPage.class);
+        myAddressesPage = PageFactory.initElements(driver,MyAddressesPage.class);
+
     }
 
     @After
     public void after()
     {
-//        driver.quit();
+        driver.quit();
     }
 }

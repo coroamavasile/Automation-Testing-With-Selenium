@@ -17,6 +17,7 @@ public class BasedTests {
     public MyPersonalInformationPage myPersonalInformationPage;
     public DressesPage dressesPage;
     public MyAddressesPage myAddressesPage;
+    public MyWishlistPage myWishlistPage;
 
     @Before
     public void setup()
@@ -31,6 +32,7 @@ public class BasedTests {
         myPersonalInformationPage = PageFactory.initElements(driver,MyPersonalInformationPage.class);
         dressesPage = PageFactory.initElements(driver, DressesPage.class);
         myAddressesPage = PageFactory.initElements(driver,MyAddressesPage.class);
+        myWishlistPage = PageFactory.initElements(driver, MyWishlistPage.class);
 
     }
 
